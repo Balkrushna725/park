@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrimeWash – Mobile Car Wash at Your Doorstep</title>
+    <meta name="description" content="PrimeWash – Eco-friendly, fast, and professional mobile car wash at your doorstep. Book now for exterior wash, interior cleaning, and full detailing." />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#007BFF',
+            },
+            boxShadow: {
+              glow: '0 10px 25px rgba(0, 123, 255, 0.25)'
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- AOS (Animate on Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- Swiper (Reviews Carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-6Q4zQ+2b5nT1RY/n7u6sHZK1g5l6UqZB8jQKxG2U9GvOAhHqv3X0I6qH2R0CzvEw3Gm0o0Y9n9O2m6o7eXq5Wg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23007BFF'/><text x='50' y='60' font-size='44' text-anchor='middle' fill='white' font-family='Arial'>P</text></svg>">
+  </head>
+  <body class="font-['Inter',_system-ui,_-apple-system,_Segoe_UI,_Roboto,_Helvetica,_Arial,_sans-serif] text-gray-800 bg-gray-50 scroll-smooth">
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-lg bg-white/70 border-b border-white/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="#home" class="flex items-center gap-3 group">
+            <div class="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center ring-1 ring-primary/20 group-hover:ring-primary/40 transition">
+              <i class="fa-solid fa-car-on text-primary"></i>
+            </div>
+            <span class="text-lg sm:text-xl font-extrabold tracking-tight">PrimeWash</span>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="#process" class="nav-link">How It Works</a>
+            <a href="#reviews" class="nav-link">Reviews</a>
+            <a href="#contact" class="px-4 py-2 rounded-lg bg-primary text-white shadow-glow hover:-translate-y-0.5 hover:shadow-lg transition">Book Now</a>
+          </nav>
+
+          <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg ring-1 ring-black/10 hover:ring-black/20 active:scale-95 transition" aria-label="Open Menu">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="md:hidden hidden border-t border-white/40 bg-white/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-4 py-4 grid gap-2">
+          <a href="#about" class="mobile-link">About</a>
+          <a href="#services" class="mobile-link">Services</a>
+          <a href="#pricing" class="mobile-link">Pricing</a>
+          <a href="#process" class="mobile-link">How It Works</a>
+          <a href="#reviews" class="mobile-link">Reviews</a>
+          <a href="#contact" class="mobile-link font-semibold text-primary">Book Now</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-28 sm:pt-32 pb-16 sm:pb-24 overflow-hidden">
+      <!-- Animated Gradient Background -->
+      <div class="absolute inset-0 -z-10 animate-gradient">
+        <div class="absolute -inset-[25%] bg-[radial-gradient(60%_60%_at_50%_0%,rgba(0,123,255,0.18),transparent),radial-gradient(40%_40%_at_80%_40%,rgba(0,123,255,0.14),transparent),linear-gradient(120deg,rgba(0,123,255,0.08),rgba(255,255,255,0.0))]"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-up" data-aos-delay="50" class="text-center lg:text-left">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+            PrimeWash – Doorstep Car Wash Service
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-gray-600">
+            Eco-friendly, fast, and professional car wash at your home.
+          </p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <a href="#contact" class="btn-primary">
+              <span>Book Now</span>
+              <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+            <a href="#pricing" class="btn-ghost">Check Pricing</a>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-gray-600" data-aos="fade-up" data-aos-delay="150">
+            <div class="flex items-center gap-2"><i class="fa-solid fa-seedling text-primary"></i> Low-water method</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-primary"></i> Insured crew</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-clock text-primary"></i> 60–90 min avg.</div>
+          </div>
+        </div>
+
+        <!-- Illustration: Animated Van + Splash -->
+        <div class="relative" data-aos="zoom-in" data-aos-delay="150">
+          <div class="relative mx-auto w-full max-w-[520px] aspect-[5/4]">
+            <div class="absolute inset-0 rounded-3xl bg-white/60 backdrop-blur-xl border border-white/50 shadow-xl"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <!-- Simple SVG Van Illustration with animated wheels -->
+              <svg viewBox="0 0 560 400" class="w-[85%] drop-shadow-lg">
+                <defs>
+                  <linearGradient id="carBody" x1="0" x2="1">
+                    <stop offset="0%" stop-color="#58A6FF"/>
+                    <stop offset="100%" stop-color="#007BFF"/>
+                  </linearGradient>
+                </defs>
+                <g>
+                  <rect x="70" y="150" rx="24" ry="24" width="380" height="120" fill="url(#carBody)" />
+                  <path d="M110 150 L220 150 C260 150 260 110 300 110 L420 110 L450 170 L450 210 L110 210 Z" fill="#e6f0ff"/>
+                  <rect x="130" y="160" width="60" height="36" rx="8" fill="#cfe3ff"/>
+                  <rect x="205" y="160" width="60" height="36" rx="8" fill="#cfe3ff"/>
+                  <rect x="280" y="160" width="60" height="36" rx="8" fill="#cfe3ff"/>
+                  <rect x="355" y="160" width="60" height="36" rx="8" fill="#cfe3ff"/>
+                  <circle cx="170" cy="275" r="34" fill="#111827" />
+                  <circle cx="170" cy="275" r="22" fill="#374151" class="wheel" />
+                  <circle cx="360" cy="275" r="34" fill="#111827" />
+                  <circle cx="360" cy="275" r="22" fill="#374151" class="wheel" />
+                  <rect x="440" y="188" width="18" height="28" rx="6" fill="#ffb703"/>
+                </g>
+                <!-- Splash -->
+                <g class="splash" fill="#b3d4ff">
+                  <ellipse cx="150" cy="310" rx="60" ry="10" opacity="0.5" />
+                  <ellipse cx="220" cy="320" rx="90" ry="12" opacity="0.3" />
+                  <ellipse cx="320" cy="312" rx="70" ry="10" opacity="0.4" />
+                </g>
+              </svg>
+            </div>
+          </div>
+          <!-- Decorative waves at bottom -->
+          <div class="absolute -bottom-10 left-0 right-0 opacity-70">
+            <div class="wave h-10"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Why PrimeWash?</h2>
+          <p>Cleaner cars. Cleaner planet. Professional service—at your doorstep.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="icon"><i class="fa-solid fa-leaf"></i></div>
+            <h3>Eco-Friendly Water Usage</h3>
+            <p>Advanced low-water methods and biodegradable products keep your car and the planet shining.</p>
+          </div>
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="120">
+            <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Professional Staff</h3>
+            <p>Vetted, insured, and trained pros deliver consistent, top-notch results every time.</p>
+          </div>
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="190">
+            <div class="icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <h3>Doorstep Service</h3>
+            <p>We come to you—home, office, or anywhere—so you can focus on what matters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section bg-gray-50">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Services</h2>
+          <p>Pick exactly what your car needs.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="service-card" data-aos="flip-up" data-aos-delay="50">
+            <div class="service-card-inner">
+              <div class="front">
+                <i class="fa-solid fa-spray-can-sparkles"></i>
+                <h3>Exterior Wash</h3>
+                <p>Gentle foam wash, rinse, and hand dry.</p>
+              </div>
+              <div class="back">
+                <p>Includes wheels and tires dressing. Streak-free finish every time.</p>
+              </div>
+            </div>
+          </div>
+          <div class="service-card" data-aos="flip-up" data-aos-delay="120">
+            <div class="service-card-inner">
+              <div class="front">
+                <i class="fa-solid fa-pump-soap"></i>
+                <h3>Interior Cleaning</h3>
+                <p>Vacuum, wipe-down, glass, and deodorize.</p>
+              </div>
+              <div class="back">
+                <p>Deep clean for mats and air vents. Safe, fresh, and allergen-aware.</p>
+              </div>
+            </div>
+          </div>
+          <div class="service-card" data-aos="flip-up" data-aos-delay="190">
+            <div class="service-card-inner">
+              <div class="front">
+                <i class="fa-solid fa-gem"></i>
+                <h3>Full Detailing</h3>
+                <p>Inside-out rejuvenation for a like-new feel.</p>
+              </div>
+              <div class="back">
+                <p>Paint protection, wax, and interior shampoo. Premium results.</p>
+              </div>
+            </div>
+          </div>
+          <div class="service-card" data-aos="flip-up" data-aos-delay="260">
+            <div class="service-card-inner">
+              <div class="front">
+                <i class="fa-solid fa-rotate"></i>
+                <h3>Subscription Packages</h3>
+                <p>Keep it spotless with flexible monthly plans.</p>
+              </div>
+              <div class="back">
+                <p>Save up to 20% with recurring visits tailored to your schedule.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Transparent Pricing</h2>
+          <p>Simple, affordable, and value-packed.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="price-card" data-aos="zoom-in" data-aos-delay="50">
+            <h3>Basic</h3>
+            <div class="price">₹499</div>
+            <ul class="features">
+              <li>Exterior wash</li>
+              <li>Quick interior wipe</li>
+              <li>Tyre shine</li>
+            </ul>
+            <a href="#contact" class="btn-cta">Book Now</a>
+          </div>
+          <div class="price-card recommended" data-aos="zoom-in" data-aos-delay="120">
+            <div class="badge">Popular</div>
+            <h3>Standard</h3>
+            <div class="price">₹999</div>
+            <ul class="features">
+              <li>Exterior + interior clean</li>
+              <li>Windows and mirrors</li>
+              <li>Dashboard polish</li>
+            </ul>
+            <a href="#contact" class="btn-cta">Book Now</a>
+          </div>
+          <div class="price-card" data-aos="zoom-in" data-aos-delay="190">
+            <h3>Premium</h3>
+            <div class="price">₹1499</div>
+            <ul class="features">
+              <li>Full detailing</li>
+              <li>Wax + protectant</li>
+              <li>Deep interior clean</li>
+            </ul>
+            <a href="#contact" class="btn-cta">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="process" class="section bg-gray-50">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>How It Works</h2>
+          <p>From booking to shining—fast and simple.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="step-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="step-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+            <h3>1. Book Online</h3>
+            <p>Pick a time and service. We’ll confirm instantly.</p>
+          </div>
+          <div class="step-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="step-icon"><i class="fa-solid fa-van-shuttle"></i></div>
+            <h3>2. We Arrive</h3>
+            <p>Our van comes fully equipped—no power or water needed.</p>
+          </div>
+          <div class="step-card" data-aos="fade-up" data-aos-delay="250">
+            <div class="step-icon"><i class="fa-solid fa-car-side"></i></div>
+            <h3>3. Shine & Drive</h3>
+            <p>Relax while we work. Get back to a spotless ride.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section id="reviews" class="section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Loved by Drivers</h2>
+          <p>Real words from happy customers.</p>
+        </div>
+        <div class="swiper review-swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="review-card">
+                <div class="stars" aria-label="5 star rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>They arrived on time and my car looks brand new. Super convenient!</p>
+                <div class="author">— Aisha K.</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="review-card">
+                <div class="stars" aria-label="5 star rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>Great detailing at a fair price. Loved the eco-friendly approach.</p>
+                <div class="author">— Rohit S.</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="review-card">
+                <div class="stars" aria-label="4 star rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                </div>
+                <p>Booked during lunch break—came back to a sparkling car. Brilliant!</p>
+                <div class="author">— Neha P.</div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Booking -->
+    <section id="contact" class="section bg-gray-50">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Book Your Wash</h2>
+          <p>Tell us your details, and we’ll handle the rest.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+          <!-- Form -->
+          <div class="glass-card" data-aos="fade-up" data-aos-delay="50">
+            <form id="bookingForm" class="grid grid-cols-1 gap-4">
+              <div class="floating-group">
+                <input id="name" type="text" placeholder=" " required />
+                <label for="name">Name</label>
+              </div>
+              <div class="floating-group">
+                <input id="phone" type="tel" placeholder=" " required />
+                <label for="phone">Phone</label>
+              </div>
+              <div class="floating-group">
+                <input id="car" type="text" placeholder=" " required />
+                <label for="car">Car Model</label>
+              </div>
+              <div class="floating-group">
+                <input id="time" type="datetime-local" placeholder=" " required />
+                <label for="time">Preferred Time</label>
+              </div>
+              <div class="floating-group">
+                <select id="service" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option>Exterior Wash</option>
+                  <option>Interior Cleaning</option>
+                  <option>Full Detailing</option>
+                  <option>Subscription Package</option>
+                </select>
+                <label for="service">Service</label>
+              </div>
+              <button type="submit" class="btn-primary justify-center">
+                <i class="fa-solid fa-calendar-check mr-2"></i>
+                Submit Booking
+              </button>
+              <a id="whatsappBtn" href="https://wa.me/919999999999?text=Hi%20PrimeWash%20Team%2C%20I%20want%20to%20book%20a%20car%20wash." target="_blank" rel="noopener" class="btn-wa">
+                <i class="fa-brands fa-whatsapp mr-2"></i>
+                Chat on WhatsApp
+              </a>
+            </form>
+          </div>
+
+          <!-- Map -->
+          <div class="glass-card p-0 overflow-hidden" data-aos="fade-up" data-aos-delay="150">
+            <div class="map-wrapper">
+              <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14013.248130431826!2d77.2090218!3d28.6139391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd35cb1fb1df%3A0xb502b2a9f4a7e4a!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1697040000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-12 border-t border-gray-200 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div>
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                <i class="fa-solid fa-car-on text-primary"></i>
+              </div>
+              <span class="font-extrabold">PrimeWash</span>
+            </div>
+            <p class="mt-3 text-sm text-gray-600">Mobile car wash and detailing at your home or office.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">Quick Links</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a class="footer-link" href="#about">About</a></li>
+              <li><a class="footer-link" href="#services">Services</a></li>
+              <li><a class="footer-link" href="#pricing">Pricing</a></li>
+              <li><a class="footer-link" href="#contact">Book</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">Follow</h4>
+            <div class="flex gap-3 text-xl">
+              <a class="social" href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a class="social" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a class="social" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">Contact</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li><i class="fa-solid fa-phone mr-2 text-primary"></i> +91 99999 99999</li>
+              <li><i class="fa-solid fa-envelope mr-2 text-primary"></i> hello@primewash.co</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+          <p>© <span id="year"></span> PrimeWash. All rights reserved.</p>
+          <div class="mt-2 sm:mt-0">Built with ❤️ in India.</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+  </html>
+

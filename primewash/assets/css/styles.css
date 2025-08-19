@@ -1,0 +1,125 @@
+/* Tailored custom styles and animations for PrimeWash */
+
+:root {
+  --primary: #007bff;
+}
+
+/* Utility extensions */
+.container { max-width: 1120px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+.section { padding: 4rem 0; }
+.section-header { text-align: center; margin-bottom: 2rem; }
+.section-header h2 { font-weight: 800; font-size: 1.75rem; }
+.section-header p { color: #6b7280; margin-top: 0.5rem; }
+
+.nav-link { color: #111827; padding: 0.5rem 0.25rem; transition: color .2s ease; }
+.nav-link:hover { color: var(--primary); }
+.mobile-link { padding: 0.75rem 0; color: #111827; }
+
+.btn-primary { display: inline-flex; align-items: center; padding: 0.75rem 1rem; background: var(--primary); color: #fff; border-radius: 0.75rem; box-shadow: 0 10px 25px rgba(0,123,255,.25); transition: transform .15s ease, box-shadow .2s ease; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 35px rgba(0,123,255,.35); }
+.btn-ghost { display: inline-flex; align-items: center; padding: 0.75rem 1rem; border-radius: 0.75rem; border: 1px solid rgba(0,0,0,.08); color: #111827; background: #fff; transition: transform .15s ease, border-color .2s ease; }
+.btn-ghost:hover { transform: translateY(-2px); border-color: rgba(0,123,255,.5); }
+
+.btn-wa { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1rem; border-radius: 0.75rem; border: 1px solid rgba(0,0,0,.08); color: #fff; background: #25D366; box-shadow: 0 12px 28px rgba(37,211,102,.35); animation: pulseSoft 2s infinite; }
+
+/* Hero background animations */
+.animate-gradient { animation: shiftGradient 12s ease-in-out infinite alternate; }
+@keyframes shiftGradient {
+  0% { transform: translateY(0px); filter: hue-rotate(0deg); }
+  100% { transform: translateY(-12px); filter: hue-rotate(-8deg); }
+}
+
+.wheel { animation: wheelSpin 3s linear infinite; transform-origin: center; }
+@keyframes wheelSpin { to { transform: rotate(360deg); } }
+
+.splash { animation: splashPulse 3.5s ease-in-out infinite; transform-origin: center; }
+@keyframes splashPulse { 0%, 100% { opacity: 0.55; } 50% { opacity: 0.85; } }
+
+.wave {
+  position: relative;
+  background: linear-gradient(180deg, rgba(0,123,255,0.25), rgba(0,123,255,0));
+  -webkit-mask: radial-gradient(40px 10px at 20px 50%, #0000 98%, #000) repeat-x; 
+  mask: radial-gradient(40px 10px at 20px 50%, #0000 98%, #000) repeat-x;
+  background-size: 40px 100%;
+  animation: waveMove 5s linear infinite;
+}
+@keyframes waveMove { from { background-position-x: 0; } to { background-position-x: 200px; } }
+
+/* Feature cards */
+.feature-card { background: rgba(255,255,255,.75); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.6); border-radius: 1rem; padding: 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,.06); transition: transform .2s ease, box-shadow .25s ease; }
+.feature-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0,0,0,.08); }
+.feature-card .icon { width: 2.75rem; height: 2.75rem; display: inline-flex; align-items: center; justify-content: center; border-radius: 0.75rem; background: rgba(0,123,255,.1); color: var(--primary); margin-bottom: 0.75rem; font-size: 1.25rem; }
+.feature-card h3 { font-weight: 700; margin-bottom: 0.25rem; }
+.feature-card p { color: #6b7280; }
+
+/* Services flip cards */
+.service-card { perspective: 1200px; }
+.service-card-inner { position: relative; width: 100%; height: 220px; transform-style: preserve-3d; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.service-card:hover .service-card-inner { transform: rotateY(180deg); }
+.service-card .front, .service-card .back { position: absolute; inset: 0; backface-visibility: hidden; background: #fff; border-radius: 1rem; border: 1px solid rgba(0,0,0,.06); box-shadow: 0 10px 24px rgba(0,0,0,.06); padding: 1.25rem; display: grid; place-items: center; text-align: center; }
+.service-card .front i { font-size: 1.75rem; color: var(--primary); margin-bottom: 0.5rem; }
+.service-card .front h3 { font-weight: 700; }
+.service-card .front p { color: #6b7280; }
+.service-card .back { transform: rotateY(180deg); color: #374151; }
+
+/* Pricing */
+.price-card { position: relative; background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 1.25rem; padding: 1.25rem; text-align: center; transition: transform .2s ease, box-shadow .25s ease, border-color .25s ease; }
+.price-card:hover { transform: translateY(-6px) scale(1.02); border-color: rgba(0,123,255,.6); box-shadow: 0 18px 40px rgba(0,123,255,.15); }
+.price-card .price { font-size: 2rem; font-weight: 800; color: #111827; margin: 0.25rem 0 0.5rem; }
+.price-card h3 { font-weight: 700; }
+.price-card .features { color: #6b7280; text-align: left; display: inline-block; margin-top: 0.5rem; }
+.price-card .features li { margin: 0.25rem 0; }
+.price-card .btn-cta { display: inline-flex; align-items: center; justify-content: center; margin-top: 0.75rem; padding: 0.65rem 1rem; border-radius: 0.75rem; background: var(--primary); color: #fff; box-shadow: 0 10px 25px rgba(0,123,255,.25); animation: pulseCallout 2.4s ease-in-out infinite; }
+
+.price-card.recommended { border-width: 2px; border-color: var(--primary); box-shadow: 0 18px 40px rgba(0,123,255,.2); }
+.price-card .badge { position: absolute; top: 0.85rem; right: 0.85rem; font-size: 0.75rem; background: rgba(0,123,255,.1); color: var(--primary); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-weight: 700; }
+
+@keyframes pulseCallout { 0%,100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+@keyframes pulseSoft { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+
+/* Steps */
+.step-card { background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 1rem; padding: 1.25rem; text-align: center; transition: transform .2s ease, box-shadow .25s ease; }
+.step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,.08); }
+.step-icon { width: 3rem; height: 3rem; display: inline-flex; align-items: center; justify-content: center; border-radius: 1rem; background: rgba(0,123,255,.1); color: var(--primary); margin-bottom: 0.75rem; font-size: 1.25rem; }
+
+/* Reviews */
+.review-card { background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 1rem; padding: 1.25rem; box-shadow: 0 10px 25px rgba(0,0,0,.06); text-align: center; }
+.review-card .stars { color: #f59e0b; letter-spacing: 1px; margin-bottom: 0.5rem; }
+.review-card .author { color: #6b7280; margin-top: 0.5rem; font-size: 0.9rem; }
+
+.swiper { padding-bottom: 2rem; }
+.swiper-pagination-bullet { background: rgba(0,0,0,.2); opacity: 1; }
+.swiper-pagination-bullet-active { background: var(--primary); }
+
+/* Glass card + form */
+.glass-card { background: rgba(255,255,255,.75); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.6); border-radius: 1.25rem; padding: 1.25rem; box-shadow: 0 12px 30px rgba(0,0,0,.06); }
+
+.floating-group { position: relative; }
+.floating-group input,
+.floating-group select,
+.floating-group textarea { width: 100%; padding: 0.9rem 1rem; border-radius: 0.75rem; border: 1px solid rgba(0,0,0,.08); outline: none; background: #fff; transition: border-color .2s ease, box-shadow .2s ease; }
+.floating-group input:focus,
+.floating-group select:focus,
+.floating-group textarea:focus { border-color: rgba(0,123,255,.6); box-shadow: 0 0 0 3px rgba(0,123,255,.15); }
+.floating-group label { position: absolute; left: 0.85rem; top: 0.9rem; background: #fff; padding: 0 0.35rem; color: #6b7280; pointer-events: none; transition: transform .15s ease, color .2s ease, top .15s ease; }
+.floating-group input:focus + label,
+.floating-group input:not(:placeholder-shown) + label,
+.floating-group select:focus + label,
+.floating-group select:valid + label,
+.floating-group textarea:focus + label,
+.floating-group textarea:not(:placeholder-shown) + label { color: var(--primary); top: -0.55rem; transform: translateY(-2px) scale(0.92); }
+
+/* Map */
+.map-wrapper { position: relative; overflow: hidden; }
+.map-frame { width: 100%; height: 360px; border: 0; transform: scale(1.02); transition: transform 1.2s ease; }
+.map-wrapper:hover .map-frame { transform: scale(1.04); }
+
+/* Footer */
+.footer-link { color: #374151; }
+.footer-link:hover { color: var(--primary); }
+.social { color: #6b7280; transition: transform .15s ease, color .15s ease; }
+.social:hover { color: var(--primary); transform: translateY(-2px); }
+
+/* Small helpers */
+.hidden-important { display: none !important; }
+
